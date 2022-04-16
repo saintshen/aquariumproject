@@ -3,20 +3,17 @@
 #include <OneWire.h> 
 #include <DallasTemperature.h>
 
-
-const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
-LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
-
 #define LCD_CONTRAST_PIN 6
 #define LCD_BACKLIGHT_PIN 10
 #define DHTPIN 8
 #define DHTTYPE DHT11
-DHT dht(DHTPIN, DHTTYPE);
-
 #define ONE_WIRE_BUS A3
 
-OneWire oneWire(ONE_WIRE_BUS);
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
 
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+DHT dht(DHTPIN, DHTTYPE);
+OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 
 int lcdDisplay = 1;
